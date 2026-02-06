@@ -12,8 +12,11 @@ spec:
       labels:
         app: nodered
     spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
       containers:
         - name: nodered
           image: dkv6/nodered:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 1880
